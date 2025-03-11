@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "PT Sans";
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    position: relative;  
+}
+
+.Navigation {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: 10vh;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+}
+
+main {
+    position: relative;
+    top: 10vh;
+    background-color: #e4e4e4;
+    width: 100%;
+    height: calc(100vh - 10vh - 15vh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    position: absolute;
+    height: 15vh;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background-color: #f5f5f5;
+}
+
+.AuthorizationBlock {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    background-color: #f3f3f3;
+    border-radius: 20px;
+    box-shadow: 0px 1px 10px #c9c9c9;
+    justify-content: center;
+    align-items: center;
+}
+
+.TitlesOnAuthorizationBlock {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25px 0 20px 0;
+}
+
+.AuthorizationTitle {
+    font-size: 30px;
+    font-weight: 700;
+    color: rgb(24, 163, 159);
+}
+
+.AuthorizationInputs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin: 10px 0;
+}
+
+.LoginInput, .PasswordInput {
+    width: 70%;
+    height: 50px;
+}
+
+.AuthorizationInputs input {
+    border-radius: 23px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgb(0, 0, 0, 0.15);
+    outline: none;
+    padding: 15px 15px;
+    font-size: 14px;
+}
+
+.AuthorizationInputs input::placeholder {
+    color: black;
+}
+
+.ButtonToLog {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.ButtonToLog .AuthorizationButton {
+    color: #f3f3f3;
+    background-color: rgb(24, 163, 159);
+    width: 70%;
+    height: 40px;
+    border: none;
+    font-weight: 700;
+    font-size: 20px;
+    border-radius: 20px;
+}
+
+.LinksForRedirect {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 25px 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.LinksForRedirect a {
+    font-size: 16px;
+    color: rgb(24, 163, 159);
+}
+
+.MangaCageLogo {
+    width: 12vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.NavigationOnMangaCage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 45px;
+    height: 100%;
+    width: 58vw;
+}
+
+.Navigation .NavigationOnMangaCage .SearchManga {
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+}
+
