@@ -32,16 +32,25 @@ const requestURL = window.location.href;
 async function LoadingPages() {
     for (let i = 0; true; i++) {
         try {
-            const RequestToGetPages = await fetch(`${requestURL}/${i}`);
-
-            if (RequestToGetPages.status === 200) {
-                let pageURL = URL.createObjectURL(RequestToGetPages.blob());
-                let readingPagesArea = document.querySelector(".radingPages");
-                readingPagesArea.innerHTML = `<div class='readingItem'><img src='${pageURL}' alt='страница' class='MangaPage'></div>`;
-            }
-            else if (response.status === 404) {
+            const response = await fetch(`${requestURL}/${i}`);
+            if(!response.ok){
                 console.log(`Страница не найдена: ${i}`);
                 break;
+            }
+            else if(response.ok){
+                let blob = response.blob();
+                let pageURL = URL.createObjectURL(blob);
+
+                let readingPagesArea = document.querySelector(".readingPages");
+                let readingItemDiv = document.createElement('div');
+                readingItemDiv.className = 'readingItem';
+                readingPagesArea.appendChild(readingItemDiv);
+
+                let readingImagesImg = document.createElement('img');
+                readingImagesImg.src = pageURL;
+                readingImagesImg.className = 'readingImage';
+                readingImagesImg.alt = 'страница';
+                readingItemDiv.appendChild(readingImagesImg);
             }
         }
         catch (err) {
